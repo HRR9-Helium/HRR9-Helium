@@ -1,0 +1,27 @@
+{
+  "name": "access",
+  "version": "0.0.1",
+  "description": "Disabled accessibility information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HRR9-Helium/HRR9-Helium.git"
+  },
+  "keywords": [
+    "access",
+    "disability",
+    "accessibility"
+  ],
+  "author": "HRR9-Helium",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HRR9-Helium/HRR9-Helium/issues"
+  },
+  "homepage": "https://github.com/HRR9-Helium/HRR9-Helium#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
