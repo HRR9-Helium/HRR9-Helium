@@ -1,0 +1,22 @@
+<div class='navigation'>
+  <ul>
+    <li><a href='#/searchVenue'>Search Venues</a></li>
+    <li><a href='#/addVenue'>Add Venue</a></li>
+  </ul>
+</div>
+
+
+<div id='container' ng-controller="searchVenueController">
+
+  <input type="text" ng-model="search" placeholder="search">
+
+  <h3 ng-if="!data.venues.length">No venues added</h3>
+  <div ng-repeat="venue in data.venues | filter: search | orderBy: '-visits'"
+       class="venues">
+     <div class="name ng-binding">{{ venue.name }}</div>
+     <div class="address ng-binding">{{ venue.address }}</div>
+     <div class='mobility_impared ng-binding'>{{ venue.mobility_impared }}</div>
+     <div class='vision_impared ng-binding'>{{ venue.vision_impared }}</div>
+     <div class='hearing_impared ng-binding'>{{ venue.hearing_impared }}</div>
+  </div>
+</div>
