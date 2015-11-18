@@ -1,1 +1,1 @@
-angular.module('app', []);
+angular.module('app', ['app.addVenue','app.searchVenue','ngRoute']);
