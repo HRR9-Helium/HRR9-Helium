@@ -9,7 +9,7 @@ app.set('view engine', 'html');
 
 //set a public directory
 
-app.use(express.static(__dirname + '/app'))
+app.use(express.static(__dirname + '/client'))
 
 app.get('/venue', function (req, res) {
   models.venueModel.find(function(err, venues) {
