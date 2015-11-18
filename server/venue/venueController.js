@@ -19,7 +19,7 @@ module.exports = {
       });
   },
 
-  allVenues: function (req, res, next) {
+  searchVenue: function (req, res, next) {
   var findAll = Q.nbind(Venue.find, Venue);
 
   findAll({})
@@ -31,7 +31,7 @@ module.exports = {
     });
   },
 
-  newVenue: function (req, res, next) {
+  addVenue: function (req, res, next) {
     var name = req.body.name;
     console.log(req.body);
 
