@@ -1,4 +1,4 @@
-var bodyParser  = require('body-parser'),
+var bodyParser  = require('body-parser')
 
 
 module.exports = function (app, express) {
@@ -13,5 +13,5 @@ module.exports = function (app, express) {
 
 
   // inject our routers into their respective route files
-  require('../venues/venueRoutes.js')(venueRouter);
+  require('./venue/Router.js')(venueRouter);
 };
