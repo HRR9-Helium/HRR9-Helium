@@ -19,10 +19,10 @@ db.on('error', console.error.bind(console, 'connection error.'));
 //
 ////////////////////////////////////////////
 
-// var userSchema = mongoose.Schema({
-//     name: String,
-//     password: Number
-// });
+var userSchema = mongoose.Schema({
+    name: String,
+    password: Number
+});
 
 var venueSchema = mongoose.Schema({
   impairmentInfoAvailable: {
@@ -47,7 +47,11 @@ var mobilityImpairedSchema = mongoose.Schema({
   restroom: Boolean
 });
 
-
+// Implement review schema at future time
+// var reviewSchema = mongoose.Schema({
+//     username: String,
+//     text: Number
+// });
 
 ////////////////////////////////////////////
 //
@@ -55,7 +59,7 @@ var mobilityImpairedSchema = mongoose.Schema({
 //
 ////////////////////////////////////////////
 
-//var userModel = mongoose.model('userModel', userSchema);
+var userModel = mongoose.model('userModel', userSchema);
 var venueModel = mongoose.model('venueModel', venueSchema);
 var mobilityImpairedModel = mongoose.model('mobilityImpairedModel', mobilityImpairedSchema);
 
@@ -67,6 +71,6 @@ var mobilityImpairedModel = mongoose.model('mobilityImpairedModel', mobilityImpa
 //
 ////////////////////////////////////////////
 
-//module.exports = userModel;
+module.exports = userModel;
 module.exports = venueModel;
 module.exports = mobilityImpairedModel;
