@@ -1,0 +1,20 @@
+Description:  Build an app that, given a location or venue, tells users what the accessibility is of that venue or location.  Users should be able to add locations and descriptions of the location's accessibility.
+
+
+
+Requirements:
+
+1. Users should be able to type in a business name and obtain accessibility information.
+2. Information shall consist of:
+  a) Mobility impaired: Ramp, steps, elevators, handicap parking, seating for wheelchairs, restroom.
+3. Users should be able to add new venues (adding name and address) and information (2.a).
+
+
+
+STRETCH GOALS:
+
++ Add information about:
+  b) Hearing impaired:
+  c) Vision impaired:
+
++ Use Google API for displaying the location/adress of a users' search query.
