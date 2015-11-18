@@ -2,16 +2,13 @@ var express = require('express');
 var path = require('path')
 
 var app = express();
+var engines = require('consolidate');
 
-var port = process.env.PORT || 3000
 //set server defaults
-
-app.set('client', __dirname +'/client');
-app.set('view engine', 'html');
+var port = process.env.PORT || 3000
 
 //set a public directory
-
-app.use(express.static(__dirname + '/client'))
+app.use(express.static('client'));
 
 app.get('/venue', function (req, res) {
   models.venueModel.find(function(err, venues) {
@@ -29,8 +26,6 @@ app.get('/', function(req, res) {
 
 //start server
 app.listen(port);
-console.log('dirname')
-console.log(__dirname)
 console.log('Server now listening on port ' + port);
 
 module.exports = app;
