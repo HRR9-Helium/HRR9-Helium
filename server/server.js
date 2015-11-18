@@ -5,7 +5,11 @@ var app = express();
 var engines = require('consolidate');
 
 //set server defaults
-var port = process.env.PORT || 3000
+
+app.set('port', process.env.PORT || 3000);
+app.set('client', __dirname +'client');
+app.set('view engine', 'html');
+
 
 //set a public directory
 app.use(express.static('client'));
