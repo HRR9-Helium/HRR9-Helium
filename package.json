@@ -23,6 +23,7 @@
   "homepage": "https://github.com/HRR9-Helium/HRR9-Helium#readme",
   "dependencies": {
     "express": "^4.13.3",
-    "mongoose": "^4.2.6"
+    "mongoose": "^4.2.6",
+    "path": "^0.12.7"
   }
 }
