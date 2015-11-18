@@ -1,10 +1,12 @@
 var express = require('express');
+var path = require('path')
 
 var app = express();
 
+var port = process.env.PORT || 3000
 //set server defaults
-app.set('port', process.env.PORT || 3000);
-app.set('client', __dirname +'client');
+
+app.set('client', __dirname +'/client');
 app.set('view engine', 'html');
 
 //set a public directory
@@ -20,13 +22,15 @@ app.get('/venue', function (req, res) {
 });
 
 // base route -> go to angular
-app.get('/','../client');
-
+app.get('/', function(req, res) {
+  res.sendFile(path.resolve(__dirname+'/../client/index.html'));
+});
 
 
 //start server
 app.listen(port);
-
+console.log('dirname')
+console.log(__dirname)
 console.log('Server now listening on port ' + port);
 
 module.exports = app;
