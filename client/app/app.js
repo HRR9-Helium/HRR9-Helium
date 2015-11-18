@@ -2,7 +2,7 @@ angular.module('app', ['app.addVenue',
                        'app.searchVenue',
                        'app.services',
                        'ngRoute'])
-.config(function($routeProvider, $httpProvider) {
+.config(function($routeProvider) {
     $routeProvider
       .when('/searchVenue', {
         templateUrl: 'app/searchVenue/searchVenue.html',
@@ -15,3 +15,4 @@ angular.module('app', ['app.addVenue',
       .otherwise({
         redirectTo: '/searchVenue'
       });
+});
