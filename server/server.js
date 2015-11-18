@@ -20,7 +20,7 @@ app.get('/venue', function (req, res) {
 });
 
 // base route -> go to angular
-app.get('/','/client');
+app.get('/','../client');
 
 
 
