@@ -6,6 +6,7 @@ var app = express();
 var engines = require('consolidate');
 
 //set server defaults
+
 var port = process.env.PORT || 3000
 app.use(bodyParser.json());
 app.use(bodyParser.text({type:'text/html'}));
