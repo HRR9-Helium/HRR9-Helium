@@ -5,8 +5,8 @@
 ////////////////////////////////////////////
 
 var mongoose = require('mongoose');
-mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/index.html';
-mongoose.connect(mongoURI);
+// mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/access';
+// mongoose.connect(mongoURI);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error.'));
@@ -19,19 +19,19 @@ db.on('error', console.error.bind(console, 'connection error.'));
 //
 ////////////////////////////////////////////
 
-var userSchema = mongoose.Schema({
-    name: String,
-    password: Mixed
-});
+// var userSchema = mongoose.Schema({
+//     name: String,
+//     password: Number
+// });
 
 var venueSchema = mongoose.Schema({
   impairmentInfoAvailable: {
-    mobility_impaired: Boolean,
-    hearing_impaired: Boolean,
-    vision_impaired: Boolean,
-  }
+    mobilityImpaired: Boolean,
+    hearingImpaired: Boolean,
+    visionImpaired: Boolean,
+  },
   name: String,
-  address: Mixed,
+  address: String,
   location: {
     latitude: Number,
     longitude: Number
@@ -42,7 +42,7 @@ var mobilityImpairedSchema = mongoose.Schema({
   ramp: Boolean,
   steps: Boolean,
   elevator: Boolean,
-  disabled_parking: Boolean,
+  disabledParking: Boolean,
   seating: Boolean,
   restroom: Boolean
 });
@@ -55,9 +55,9 @@ var mobilityImpairedSchema = mongoose.Schema({
 //
 ////////////////////////////////////////////
 
-var userModel = mongoose.model('userModel', userSchema);
-var venueModel = mongoose.model('venueModel', userSchema);
-var mobilityImpairedModel = mongoose.model('mobilityImpairedModel', userSchema);
+//var userModel = mongoose.model('userModel', userSchema);
+var venueModel = mongoose.model('venueModel', venueSchema);
+var mobilityImpairedModel = mongoose.model('mobilityImpairedModel', mobilityImpairedSchema);
 
 
 
@@ -67,6 +67,6 @@ var mobilityImpairedModel = mongoose.model('mobilityImpairedModel', userSchema);
 //
 ////////////////////////////////////////////
 
-module.exports = userModel;
+//module.exports = userModel;
 module.exports = venueModel;
 module.exports = mobilityImpairedModel;

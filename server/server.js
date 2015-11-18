@@ -2,31 +2,16 @@ var express = require('express');
 var path = require('path');
 var bodyParser = requrie('body-parser');
 
+
 var app = express();
-var engines = require('consolidate');
+
+
+
 
 //set server defaults
+var port = process.env.PORT || 3000;
 
-var port = process.env.PORT || 3000
-app.use(bodyParser.json());
-app.use(bodyParser.text({type:'text/html'}));
-
-//set a public directory
-app.use(express.static('client'));
-
-app.get('/venue', function (req, res) {
-  models.venueModel.find(function(err, venues) {
-    if (err)
-      res.send(err);
-    res.json(venues);
-  });
-});
-
-// base route -> go to angular
-app.get('/', function(req, res) {
-  res.sendFile(path.resolve(__dirname+'/../client/index.html'));
-});
-
+require('./middleware.js')(app, express);
 
 //start server
 app.listen(port);
