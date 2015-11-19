@@ -1,12 +1,12 @@
-# Project Name
+# Access
 
-> Pithy project description
+> Instantly get accessibility information about the venues you care about.
 
 ## Team
 
-  - __Product Owner__: teamMember
-  - __Scrum Master__: teamMember
-  - __Development Team Members__: teamMember, teamMember
+  - __Product Owner__: Robert Bowie
+  - __Scrum Master__: Nick Papayiannakis
+  - __Development Team Members__: Justin Zimmerman, Leslie Pajuelo
 
 ## Table of Contents
 
@@ -20,15 +20,14 @@
 
 ## Usage
 
-> Some usage instructions
+> Head over to http://hrr9-helium.herokuapp.com/ to find accessible destinations near you!
 
 ## Requirements
 
 - Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+- MongoDB 4.2.6
+- Express 4.13.x
+
 
 ## Development
 
@@ -37,14 +36,12 @@
 From within the root directory:
 
 ```sh
-sudo npm install -g bower
 npm install
-bower install
 ```
 
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+View the project roadmap [here](https://waffle.io/HRR9-Helium/HRR9-Helium)
 
 
 ## Contributing
