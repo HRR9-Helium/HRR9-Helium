@@ -1,17 +1,18 @@
-////////////////////////////////////////////
+//-----------------------------------------------------------------------------
 //
 // INITIALIZE DEPENDENCIES AND CONNECT TO DATABASE
 //
-////////////////////////////////////////////
+//-----------------------------------------------------------------------------
 
 var mongoose = require('mongoose');
 
 
-////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
 //
 // DEFINE USER, VENUE AND IMPARIMENT SCHEMAS
 //
-////////////////////////////////////////////
+//-----------------------------------------------------------------------------
 
 var userSchema = mongoose.Schema({
     name: String,
@@ -47,22 +48,26 @@ var mobilityImpairedSchema = mongoose.Schema({
 //     text: Number
 // });
 
-////////////////////////////////////////////
+
+
+//-----------------------------------------------------------------------------
 //
 // DEFINE USER, VENUE AND IMPARIMENT MODELS
 //
-////////////////////////////////////////////
+//-----------------------------------------------------------------------------
 
 var userModel = mongoose.model('userModel', userSchema);
 var Venue = mongoose.model('venueModel', venueSchema);
 var mobilityImpairedModel = mongoose.model('mobilityImpairedModel', mobilityImpairedSchema);
 
 
-////////////////////////////////////////////
+
+//-----------------------------------------------------------------------------
 //
-// Seed data to force creation of collection
+// SEED DATA TO FORCE CREATION OF COLLECTION
 //
-////////////////////////////////////////////
+//-----------------------------------------------------------------------------
+
 var silence = new Venue({
   impairmentInfoAvailable: {
     mobilityImpaired: true,
@@ -78,11 +83,14 @@ var silence = new Venue({
 });
 
 silence.save();
-////////////////////////////////////////////
+
+
+
+//-----------------------------------------------------------------------------
 //
 // EXPORT SCHEMA MODELS
 //
-////////////////////////////////////////////
+//-----------------------------------------------------------------------------
 
 module.exports = userModel;
 module.exports = Venue;
