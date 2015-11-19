@@ -10,7 +10,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/access';
-mongoose.createConnection(mongoURI);
+mongoose.connect(mongoURI);
 // var db = mongoose.connection;
 // db.on('error', console.error.bind(console, 'connection error.'));
 
