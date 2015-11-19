@@ -12,8 +12,12 @@
          <br /><input class="text" id="venueAddress" name="venue" type="text" ng-model="venue.address" placeholder="Add venue address">
 
          <br /><input type="checkbox" id="mobilityImpaired" name="venue" ng-model="venue.impairmentInfoAvailable.mobilityImpaired"> <span> Access for Mobility Impaired </span>
-         <br /><input type="checkbox" id="visionImpaired" name="venue" ng-model="venue.impairmentInfoAvailable.visionImpaired"> <span> Access for Vision Impaired </span>
-         <br /><input type="checkbox" id="hearingImpaired" name="venue" ng-model="venue.impairmentInfoAvailable.hearingImpaired"> <span> Access for Hearing Impaired </span>
+         <br /><input type="checkbox" id="ramp" name="venue" ng-model="venue.mobilityImpaired.ramp"> <span> Ramp </span>
+         <br /><input type="checkbox" id="steps" name="venue" ng-model="venue.mobilityImpaired.steps"> <span> Steps</span>
+         <br /><input type="checkbox" id="elevator" name="venue" ng-model="venue.mobilityImpaired.elevator"> <span> Elevator </span>
+         <br /><input type="checkbox" id="disabledParking" name="venue" ng-model="venue.mobilityImpaired.diabledParking"> <span> Disabled Parking </span>
+         <br /><input type="checkbox" id="seating" name="venue" ng-model="venue.mobilityImpaired.seating"> <span> Seating </span>
+         <br /><input type="checkbox" id="restroom" name="venue" ng-model="venue.mobilityImpaired.restroom"> <span> Restrooms </span>
 
   <br /><button>Add Venue</button>
 </form>
