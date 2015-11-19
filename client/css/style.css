@@ -7,7 +7,7 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font: 11pt/1.7 Calluna-Regular, PalatinoLynotype-Regular, serif;
+  font: 11pt/1.7 'Open Sans',  sans-serif;
   text-rendering: optimizeLegibility;
 }
 
@@ -19,7 +19,6 @@ p {
   line-height: 1.5;
   margin-bottom: 0.2em;
   word-break: break-all;
-  word-break: break-word;
 }
 
 /*-----------------------------------------------------------------------------
