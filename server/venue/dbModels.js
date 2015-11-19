@@ -1,8 +1,8 @@
-////////////////////////////////////////////
+//-----------------------------------------------------------------------------
 //
 // INITIALIZE DEPENDENCIES AND CONNECT TO DATABASE
 //
-////////////////////////////////////////////
+//-----------------------------------------------------------------------------
 
 var mongoose = require('mongoose');
 // mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/access';
@@ -13,11 +13,11 @@ db.on('error', console.error.bind(console, 'connection error.'));
 
 
 
-////////////////////////////////////////////
+//-----------------------------------------------------------------------------
 //
 // DEFINE USER, VENUE AND IMPARIMENT SCHEMAS
 //
-////////////////////////////////////////////
+//-----------------------------------------------------------------------------
 
 var userSchema = mongoose.Schema({
     name: String,
@@ -53,11 +53,11 @@ var mobilityImpairedSchema = mongoose.Schema({
 //     text: Number
 // });
 
-////////////////////////////////////////////
+//-----------------------------------------------------------------------------
 //
 // DEFINE USER, VENUE AND IMPARIMENT MODELS
 //
-////////////////////////////////////////////
+//-----------------------------------------------------------------------------
 
 var userModel = mongoose.model('userModel', userSchema);
 var venueModel = mongoose.model('venueModel', venueSchema);
@@ -65,11 +65,11 @@ var mobilityImpairedModel = mongoose.model('mobilityImpairedModel', mobilityImpa
 
 
 
-////////////////////////////////////////////
+//-----------------------------------------------------------------------------
 //
 // EXPORT SCHEMA MODELS
 //
-////////////////////////////////////////////
+//-----------------------------------------------------------------------------
 
 module.exports = userModel;
 module.exports = venueModel;

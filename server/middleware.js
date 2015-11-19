@@ -1,6 +1,5 @@
 var bodyParser  = require('body-parser')
 
-
 module.exports = function (app, express) {
 
   var venueRouter = express.Router();
@@ -12,6 +11,6 @@ module.exports = function (app, express) {
   app.use('/api/venues', venueRouter); // user venue router for venue request
 
 
-  // inject our routers into their respective route files
+  // Inject routers into their respective route files
   require('./venue/Router.js')(venueRouter);
 };

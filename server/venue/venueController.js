@@ -2,6 +2,12 @@ var Venue    = require('./dbModels.js'),
     Q        = require('q')
 
 
+//-----------------------------------------------------------------------------
+//
+// VENUE CONTROLLER METHODS
+//
+//-----------------------------------------------------------------------------
+
 module.exports = {
   findUrl: function (req, res, next, name) {
     var findVenue = Q.nbind(Venue.findOne, Venue);

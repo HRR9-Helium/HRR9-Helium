@@ -1,6 +1,12 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb://localhost:3000/access';
 
+//-----------------------------------------------------------------------------
+//
+// SAMPLE VENUE INFORMATION FOR TESTING PURPOSS ONLY
+//
+//-----------------------------------------------------------------------------
+
 var insertDocument = function(db, callback) {
    db.collection('venueModel').insertOne( {
       'impairmentInfoAvailable': {
@@ -20,8 +26,8 @@ var insertDocument = function(db, callback) {
   });
 };
 
-//Call the insertDocument function.
 
+// Test document creation
 MongoClient.connect(url, function(err, access) {
   insertDocument(access, function() {
       access.close();
