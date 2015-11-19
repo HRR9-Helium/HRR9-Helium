@@ -14,11 +14,6 @@ var mongoose = require('mongoose');
 //
 //-----------------------------------------------------------------------------
 
-var userSchema = mongoose.Schema({
-    name: String,
-    password: Number
-});
-
 var venueSchema = mongoose.Schema({
   impairmentInfoAvailable: {
     mobilityImpaired: Boolean,
@@ -30,8 +25,17 @@ var venueSchema = mongoose.Schema({
   location: {
     latitude: Number,
     longitude: Number
+  },
+  mobilityImpaired:{
+    ramp: Boolean,
+    steps: Boolean,
+    elevator: Boolean,
+    disabledParking: Boolean,
+    seating: Boolean,
+    restroom: Boolean  
   }
 });
+
 
 var mobilityImpairedSchema = mongoose.Schema({
   ramp: Boolean,
@@ -42,13 +46,6 @@ var mobilityImpairedSchema = mongoose.Schema({
   restroom: Boolean
 });
 
-// Implement review schema at future time
-// var reviewSchema = mongoose.Schema({
-//     username: String,
-//     text: Number
-// });
-
-
 
 //-----------------------------------------------------------------------------
 //
@@ -56,29 +53,26 @@ var mobilityImpairedSchema = mongoose.Schema({
 //
 //-----------------------------------------------------------------------------
 
-var userModel = mongoose.model('userModel', userSchema);
 var Venue = mongoose.model('venueModel', venueSchema);
-var mobilityImpairedModel = mongoose.model('mobilityImpairedModel', mobilityImpairedSchema);
-
 
 
 //-----------------------------------------------------------------------------
 //
 // SEED DATA TO FORCE CREATION OF COLLECTION
 //
-//-----------------------------------------------------------------------------
 
-var silence = new Venue({
+////////////////////////////////////////////
+var seed = new Venue({
   impairmentInfoAvailable: {
     mobilityImpaired: true,
     hearingImpaired: false,
     visionImpaired: false,
   },
-  name: 'String',
-  address: 'String',
+  name: 'Mauricio',
+  address: '1705 Market Place, Bakersfield, CA 93309',
   location: {
-    latitude: 1,
-    longitude: 2
+    latitude: 35.3667,
+    longitude: 119.0167
   }
 });
 
@@ -92,6 +86,4 @@ silence.save();
 //
 //-----------------------------------------------------------------------------
 
-module.exports = userModel;
 module.exports = Venue;
-module.exports = mobilityImpairedModel;
