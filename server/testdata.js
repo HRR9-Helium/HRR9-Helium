@@ -20,15 +20,7 @@ var insertDocument = function(db, callback) {
         callback(result);
   });
 };
-<<<<<<< HEAD
 
-//Call the insertDocument function.
-
-=======
-​
-//Call the insertDocument function.
-​
->>>>>>> Change server invocation location
 MongoClient.connect(url, function(err, access) {
   insertDocument(access, function() {
       access.close();
