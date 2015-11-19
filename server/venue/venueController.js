@@ -47,9 +47,19 @@ module.exports = {
       .then(function (name, address) {
         if (name) {
           var newVenue = {
-            name: name,
-            address: address
-          };
+        impairmentInfoAvailable: {
+          mobilityImpaired: true,
+          hearingImpaired: false,
+          visionImpaired: false,
+        },
+        name: 'String',
+        address: 'String',
+        location: {
+          latitude: 23,
+          longitude: 132
+        }
+      }
+        
           return createVenue(newVenue);
         }
       })
@@ -62,17 +72,4 @@ module.exports = {
         next(error);
       });
   },
-
-  navToVenue: function (req, res, next) {
-    var venue = req.navVenue;
-    venue.visits++;
-    venue.save(function (err, savedVenue) {
-      if (err) {
-        next(err);
-      } else {
-        res.redirect(savedVenue.url);
-      }
-    });
-  }
-
 };

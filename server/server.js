@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 
 var app = express();
@@ -11,8 +12,25 @@ var port = process.env.PORT || 3000;
 
 mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/access';
 mongoose.connect(mongoURI);
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error.'));
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error.'));
+
+db.once('open', function(){
+  console.log('opened')
+
+var kittySchema = mongoose.Schema({
+    name: String
+});
+
+var Kitten = mongoose.model('Kitten', kittySchema);
+
+var silence = new Kitten({ name: 'Silence' });
+
+silence.save();
+
+});
+
 
 require('./middleware.js')(app, express);
 
