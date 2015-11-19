@@ -58,7 +58,11 @@ var Venue = mongoose.model('venueModel', venueSchema);
 var mobilityImpairedModel = mongoose.model('mobilityImpairedModel', mobilityImpairedSchema);
 
 
-//seed data to create collection
+////////////////////////////////////////////
+//
+// Seed data to force creation of collection
+//
+////////////////////////////////////////////
 var silence = new Venue({
   impairmentInfoAvailable: {
     mobilityImpaired: true,
