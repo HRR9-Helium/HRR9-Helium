@@ -15,13 +15,13 @@
 </nav>
 
 
-<div id='container' ng-controller="searchVenueController">
-
-  <input type="text" ng-model="search" placeholder="search">
+<div class='container col-md-offset-4 col-md-8' ng-controller="searchVenueController">
+  <h2>Find a venue </h2>
+  <input type="text" class='search' ng-model="search" placeholder="search">
 
   <h3 ng-if="!data.venues.length">No venues added</h3>
   <div ng-repeat="venue in data.venues | filter: search | orderBy: '-visits'"
-       class="venues">
+       class="venues row">
      <div class="name ng-binding">{{ venue.name }}</div>
      <div class="address ng-binding">{{ venue.address }}</div>
      <div class='mobilityImpared ng-binding'>{{ venue.impairmentInfoAvailable.mobilityImpared }}</div>
