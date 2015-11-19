@@ -1,6 +1,7 @@
-var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:3000/access';
 
+var MongoClient = require('mongodb');
+var url = 'mongodb://localhost:3000/access';
+​
 var insertDocument = function(db, callback) {
    db.collection('venueModel').insertOne( {
       'impairmentInfoAvailable': {
@@ -19,9 +20,15 @@ var insertDocument = function(db, callback) {
         callback(result);
   });
 };
+<<<<<<< HEAD
 
 //Call the insertDocument function.
 
+=======
+​
+//Call the insertDocument function.
+​
+>>>>>>> Change server invocation location
 MongoClient.connect(url, function(err, access) {
   insertDocument(access, function() {
       access.close();
