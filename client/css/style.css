@@ -21,12 +21,28 @@ p {
   word-break: break-all;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 150px;
+  padding-top: 100px;
+  background-color: #f5f5f5;
+}
+
+
 /*-----------------------------------------------------------------------------
 //
 // LAYOUT
 //
 //-----------------------------------------------------------------------------*/
 
+.footerNav {
+    width: 500px;
+    float: none;
+    margin: 0 auto;
+}
 
 
 /*-----------------------------------------------------------------------------
