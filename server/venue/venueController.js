@@ -1,6 +1,6 @@
 var Venue    = require('./dbModels.js'),
-    Q        = require('q')
-
+    Q        = require('q'),
+    mongoose = require('mongoose')
 
 
 //-----------------------------------------------------------------------------
@@ -10,12 +10,13 @@ var Venue    = require('./dbModels.js'),
 //-----------------------------------------------------------------------------
 
 module.exports = {
-  findUrl: function (req, res, next, name) {
+    searchVenue: function (req, res, next, code) {
     var findVenue = Q.nbind(Venue.findOne, Venue);
-    findVenue({name: name})
+    findVenue({code: code})
       .then(function (venue) {
         if (venue) {
-          req.navVenue = venue;
+          //req.navLink
+          //req.navVenue = venue;
           next();
         } else {
           next(new Error('Venue not added yet'));
@@ -26,53 +27,48 @@ module.exports = {
       });
   },
 
-  searchVenue: function (req, res, next) {
-  var findAll = Q.nbind(Venue.find, Venue);
-
-  findAll({})
-    .then(function (venues) {
-      res.json(venues);
-    })
-    .fail(function (error) {
-      next(error);
-    });
-  },
-
   addVenue: function (req, res, next) {
-    var name = req.body.name;
-    console.log(req.body);
 
+    var name = req.body.name;
+    var address = req.body.address;
+ 
     var createVenue = Q.nbind(Venue.create, Venue);
     var findVenue = Q.nbind(Venue.findOne, Venue);
+    var saveVenue = Q.nbind(Venue.save, Venue);
 
     findVenue({name: name})
       .then(function (match) {
         if (match) {
           res.send(match);
+        } else{
+          console.log('no match')
         }
       })
-      .then(function (name, address) {
+      .then(function () {
         if (name) {
-          var newVenue = {
+      var newVenue = new Venue ({
         impairmentInfoAvailable: {
           mobilityImpaired: true,
           hearingImpaired: false,
           visionImpaired: false,
         },
-        name: 'String',
-        address: 'String',
+        name: name,
+        address: address,
         location: {
-          latitude: 23,
-          longitude: 132
+          latitude: 100,
+          longitude: 100
         }
-      }
-        
-          return createVenue(newVenue);
+      })
+
+      newVenue.save()
+
+        //return createVenue(newVenue);
         }
       })
       .then(function (createdVenue) {
         if (createdVenue) {
-          res.json(createdVenue);
+         res.json(createdVenue);
+          
         }
       })
       .fail(function (error) {
