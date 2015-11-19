@@ -14,9 +14,15 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div class='container' ng-controller="addVenueController">
+<div class='container col-md-offset-4 col-md-8' ng-controller="addVenueController">
 
-<form name="venue" ng-submit="addVenue()">
+
+
+
+<form name="venue" class='form-horizontal' ng-submit="addVenue()">
+    <fieldset>
+    <legend>Enter venue information</legend>
+      <div class='form-group'>
          <input class="text" id="venueName" name="venue" type="text" ng-model="venue.name" placeholder="Add venue name">
          <br /><input class="text" id="venueAddress" name="venue" type="text" ng-model="venue.address" placeholder="Add venue address">
 
@@ -27,7 +33,8 @@
          <br /><input type="checkbox" id="disabledParking" name="venue" ng-model="venue.mobilityImpaired.diabledParking"> <span> Disabled Parking </span>
          <br /><input type="checkbox" id="seating" name="venue" ng-model="venue.mobilityImpaired.seating"> <span> Seating </span>
          <br /><input type="checkbox" id="restroom" name="venue" ng-model="venue.mobilityImpaired.restroom"> <span> Restrooms </span>
-
+      </div>
+    </fieldset>
   <br /><button>Add Venue</button>
 </form>
 </div>
