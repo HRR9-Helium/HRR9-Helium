@@ -1,5 +1,11 @@
 var venueController = require('./venueController.js');
 
+//-----------------------------------------------------------------------------
+//
+// VENUE ROUTER
+//
+//-----------------------------------------------------------------------------
+
 module.exports = function(app){
   //app.param('name', venueController.searchVenue)
   
