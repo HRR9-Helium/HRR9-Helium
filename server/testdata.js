@@ -22,8 +22,8 @@ var insertDocument = function(db, callback) {
 
 //Call the insertDocument function.
 
-// MongoClient.connect(url, function(err, access) {
-//   insertDocument(access, function() {
-//       access.close();
-//   });
-// });
+MongoClient.connect(url, function(err, access) {
+  insertDocument(access, function() {
+      access.close();
+  });
+});
