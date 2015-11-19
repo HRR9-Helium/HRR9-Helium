@@ -15,30 +15,84 @@
 </nav>
 
 <div class='container col-md-offset-4 col-md-4 col-md-offset-4' ng-controller="addVenueController">
-
-
-<form name="venue" class='form-horizontal' ng-submit="addVenue()">
+  <form class="form-horizontal">
     <fieldset>
-    <legend>Enter venue information</legend>
-      <div class='form-group'>
-         <label class="col-md-4">Venue name</label>
-         <input class="col-md-8" id="venueName" name="venue" type="text" ng-model="venue.name" placeholder="Add venue name">
-         <label class="col-md-4">Venue address</label>
-         <input class="col-md-8" id="venueAddress" name="venue" type="text" ng-model="venue.address" placeholder="Add venue address">
-        <div class="panel">
 
-         <input class="col-md-3" type="checkbox" id="mobilityImpaired" name="venue" ng-model="venue.impairmentInfoAvailable.mobilityImpaired"> <span class="col-md-3"> Access for Mobility Impaired </span>
-         <input class="col-md-3" type="checkbox" id="ramp" name="venue" ng-model="venue.mobilityImpaired.ramp"> <span class="col-md-3"> Ramp </span>
-         <input class="col-md-3" type="checkbox" id="steps" name="venue" ng-model="venue.mobilityImpaired.steps"> <span class="col-md-3"> Steps</span>
-         <input class="col-md-3" type="checkbox" id="elevator" name="venue" ng-model="venue.mobilityImpaired.elevator"> <span class="col-md-3"> Elevator </span>
-         <input class="col-md-3" type="checkbox" id="disabledParking" name="venue" ng-model="venue.mobilityImpaired.diabledParking"> <span class="col-md-3"> Disabled Parking </span>
-         <input class="col-md-3" type="checkbox" id="seating" name="venue" ng-model="venue.mobilityImpaired.seating"> <span class="col-md-3"> Seating </span>
-         <input class="col-md-3" type="checkbox" id="restroom" name="venue" ng-model="venue.mobilityImpaired.restroom"> <span class="col-md-3"> Restrooms </span>
+    <!-- Form Name -->
+    <legend>Enter Venue Information</legend>
+
+    <!-- Venue name and address-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="venueName">Venue</label>  
+      <div class="col-md-8">
+      <input id="venueName" name="venueName" type="text" placeholder="Enter venue address" class="form-control input-md" required="" ng-model="venue.name">
+        
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="venueAddress">Address</label>  
+      <div class="col-md-8">
+      <input id="venueAddress" name="venueAddress" type="text" placeholder="Enter venue address" class="form-control input-md" required="" ng-model="venue.address">
+        
+      </div>
+    </div>
+
+    <!-- Accessbility information -->
+    <div class="form-group">
+
+      <label class="col-md-4 control-label" for="mobilityImpaired">Accessibility</label>
+      <div class="col-md-8">
+        <div class="checkbox">
+          <label for="mobilityImpaired-0">
+            <input type="checkbox" name="mobilityImpaired" id="mobilityImpaired-0" value="" ng-model="venue.mobilityImpaired.ramp">
+            Ramp
+          </label>
+        </div>
+        <div class="checkbox">
+          <label for="mobilityImpaired-1">
+            <input type="checkbox" name="mobilityImpaired" id="mobilityImpaired-1" value="" ng-model="venue.mobilityImpaired.steps">
+            Steps
+          </label>
+        </div>
+        <div class="checkbox">
+          <label for="mobilityImpaired-2">
+            <input type="checkbox" name="mobilityImpaired" id="mobilityImpaired-2" value="" ng-model="venue.mobilityImpaired.elevator">
+            Elevator
+          </label>
+        </div>
+        <div class="checkbox">
+          <label for="mobilityImpaired-3">
+            <input type="checkbox" name="mobilityImpaired" id="mobilityImpaired-3" value="" ng-model="venue.mobilityImpaired.diabledParking">
+            Disabled parking
+          </label>
+        </div>
+        <div class="checkbox">
+          <label for="mobilityImpaired-4">
+            <input type="checkbox" name="mobilityImpaired" id="mobilityImpaired-4" value="" ng-model="venue.mobilityImpaired.seating">
+            Seating
+          </label>
+        </div>
+        <div class="checkbox">
+          <label for="mobilityImpaired-5">
+            <input type="checkbox" name="mobilityImpaired" id="mobilityImpaired-5" value="" ng-model="venue.mobilityImpaired.restroom">
+            Restroom
+          </label>
         </div>
       </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="submit">Submit</label>
+      <div class="col-md-4">
+        <button id="submit" name="submit" class="btn btn-primary" ng-submit="addVenue()">Submit</button>
+      </div>
+    </div>
+
     </fieldset>
-  <br /><button>Add Venue</button>
-</form>
+  </form>
+
 </div>
 
 <footer class="footer">
