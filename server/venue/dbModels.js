@@ -7,10 +7,6 @@
 var mongoose = require('mongoose');
 
 
-
-
-
-
 ////////////////////////////////////////////
 //
 // DEFINE USER, VENUE AND IMPARIMENT SCHEMAS
@@ -58,11 +54,26 @@ var mobilityImpairedSchema = mongoose.Schema({
 ////////////////////////////////////////////
 
 var userModel = mongoose.model('userModel', userSchema);
-var venueModel = mongoose.model('venueModel', venueSchema);
+var Venue = mongoose.model('venueModel', venueSchema);
 var mobilityImpairedModel = mongoose.model('mobilityImpairedModel', mobilityImpairedSchema);
 
 
+//seed data to create collection
+var silence = new Venue({
+  impairmentInfoAvailable: {
+    mobilityImpaired: true,
+    hearingImpaired: false,
+    visionImpaired: false,
+  },
+  name: 'String',
+  address: 'String',
+  location: {
+    latitude: 1,
+    longitude: 2
+  }
+});
 
+silence.save();
 ////////////////////////////////////////////
 //
 // EXPORT SCHEMA MODELS
@@ -70,5 +81,5 @@ var mobilityImpairedModel = mongoose.model('mobilityImpairedModel', mobilityImpa
 ////////////////////////////////////////////
 
 module.exports = userModel;
-module.exports = venueModel;
+module.exports = Venue;
 module.exports = mobilityImpairedModel;
