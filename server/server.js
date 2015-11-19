@@ -18,17 +18,6 @@ db.on('error', console.error.bind(console, 'connection error.'));
 
 db.once('open', function(){
   console.log('opened')
-
-var kittySchema = mongoose.Schema({
-    name: String
-});
-
-var Kitten = mongoose.model('Kitten', kittySchema);
-
-var silence = new Kitten({ name: 'Silence' });
-
-silence.save();
-
 });
 
 
