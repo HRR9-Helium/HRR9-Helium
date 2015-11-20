@@ -4,6 +4,7 @@ angular.module('app.searchVenue', [])
   $scope.data = {};
   
   $scope.getVenues = function() {
+
     Venues.getVenues($scope.data)
       .then(function (venues) {
         $scope.data.venues = venues;

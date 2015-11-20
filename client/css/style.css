@@ -7,7 +7,7 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font: 11pt/1.7 'Open Sans',  sans-serif;
+  font: 11pt/1.7 Calluna-Regular, PalatinoLynotype-Regular, serif;
   text-rendering: optimizeLegibility;
 }
 
@@ -19,18 +19,8 @@ p {
   line-height: 1.5;
   margin-bottom: 0.2em;
   word-break: break-all;
+  word-break: break-word;
 }
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 150px;
-  padding-top: 100px;
-  background-color: #f5f5f5;
-}
-
 
 /*-----------------------------------------------------------------------------
 //
@@ -40,23 +30,13 @@ p {
 
 
 
-
 /*-----------------------------------------------------------------------------
 //
 // MODULE
 //
 //-----------------------------------------------------------------------------*/
 
-.footerNav {
-    width: 500px;
-    float: none;
-    margin: 0 auto;
-}
 
-.search {
-  width: 400px;
-  height: 50px;
-}
 
 /*-----------------------------------------------------------------------------
 //

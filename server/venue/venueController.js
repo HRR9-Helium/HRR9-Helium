@@ -10,20 +10,11 @@ var Venue    = require('./dbModels.js'),
 //-----------------------------------------------------------------------------
 
 module.exports = {
-    searchVenue: function (req, res, next, code) {
-    var findVenue = Q.nbind(Venue.findOne, Venue);
-    findVenue({code: code})
-      .then(function (venue) {
-        if (venue) {
-          //req.navLink
-          //req.navVenue = venue;
-          next();
-        } else {
-          next(new Error('Venue not added yet'));
-        }
-      })
-      .fail(function (error) {
-        next(error);
+  searchVenue: function (req, res, next) {
+    Venue
+      .find({}, {'_id': 0, '__v': 0})
+      .then(function(venueList) {
+        res.json(venueList);
       });
   },
 
@@ -75,4 +66,6 @@ module.exports = {
         next(error);
       });
   },
+
+
 };
