@@ -5,7 +5,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var vc = require('./venue/venueController.js')
 
-
 var app = express();
 
 //set server defaults
