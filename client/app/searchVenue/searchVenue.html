@@ -20,7 +20,7 @@
   <input type="text" class='search' ng-model="search" placeholder="search">
 
   <!--<h3 ng-if="!data.venues.length">No venues added</h3>-->
-  <div ng-repeat="venue in data.venues | filter: search | unique:'name'"
+  <div ng-repeat="venue in data.venues | filter: search"
        class="venues row venueTemp">
     <div class="name ng-binding venueEm">{{ venue.name }}</div>
        <div class="address ng-binding venueEm">{{ venue.address }}</div>
