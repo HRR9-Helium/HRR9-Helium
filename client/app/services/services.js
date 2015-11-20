@@ -8,6 +8,9 @@ angular.module('app.services', [])
       })
       .then(function(res) {
         return res.data;
+      })
+      .catch(function(error){
+
       });
     };
 

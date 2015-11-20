@@ -3,6 +3,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var vc = require('./venue/venueController.js')
 
 
 var app = express();
@@ -19,6 +20,11 @@ db.on('error', console.error.bind(console, 'connection error.'));
 db.once('open', function(){
   console.log('opened')
 });
+
+// app.get('/api/venues', function (req, res) {
+//   var result = vc.searchVenue(req, res);
+//   res.send(result);
+// });
 
 
 require('./middleware.js')(app, express);

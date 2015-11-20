@@ -13,5 +13,5 @@ module.exports = function(app){
   .get(venueController.searchVenue)
   .post(venueController.addVenue);
 
-  //app.get('/:name', venueController.displayVenue);
+  //app.get('/:name', venueController.searchVenue);
 }
