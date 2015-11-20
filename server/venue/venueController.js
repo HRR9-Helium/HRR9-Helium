@@ -10,42 +10,12 @@ var Venue    = require('./dbModels.js'),
 //-----------------------------------------------------------------------------
 
 module.exports = {
-    searchVenue: function (req, res, next) {
-
-      Venue
-        .find({}, {'_id': 0, '__v': 0})
-        .then(function(venueList) {
-          var results = [];
-          venueList.forEach(function(venue) {
-          results.push(venue);
-          // console.log(results);
-          res.json(venueList);
-        });
-      // console.log(results);
-      })
-
-      // var findVenue = Q.nbind(Venue.find, Venue);
-      // findVenue({})
-      // .then(function(item){
-      //   console.log('find venue promise')
-      //   console.log(item)
-      //   return item;
-
-      // })
-
-      // .then(function (venue) {
-      //   if (venue) {
-      //     console.log('searchVenue')
-      //     return venue
-      //     //res.send(venue);
-      //   } else {
-      //     next(new Error('Venue not added yet'));
-      //   }
-      // })
-      // .fail(function (error) {
-      //   console.log('searchVenue fail')
-      //   next(error);
-      // });
+  searchVenue: function (req, res, next) {
+    Venue
+      .find({}, {'_id': 0, '__v': 0})
+      .then(function(venueList) {
+        res.json(venueList);
+      });
   },
 
   addVenue: function (req, res, next) {

@@ -21,12 +21,6 @@ db.once('open', function(){
   console.log('opened')
 });
 
-// app.get('/api/venues', function (req, res) {
-//   var result = vc.searchVenue(req, res);
-//   res.send(result);
-// });
-
-
 require('./middleware.js')(app, express);
 
 //start server
