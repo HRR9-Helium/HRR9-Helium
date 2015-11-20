@@ -47,37 +47,6 @@ var Venue = mongoose.model('venueModel', venueSchema);
 
 //-----------------------------------------------------------------------------
 //
-// SEED DATA TO FORCE CREATION OF COLLECTION
-//
-//-----------------------------------------------------------------------------
-var seed = new Venue({
-  impairmentInfoAvailable: {
-    mobilityImpaired: true,
-    hearingImpaired: false,
-    visionImpaired: false,
-  },
-  name: 'Mauricio',
-  address: '1705 Market Place, Bakersfield, CA 93309',
-  location: {
-    latitude: 35.3667,
-    longitude: 119.0167
-  },
-  mobilityImpaired:{
-    ramp: false,
-    steps: false,
-    elevator: false,
-    disabledParking: false,
-    seating: false,
-    restroom: false  
-  }
-});
-
-seed.save();
-
-
-
-//-----------------------------------------------------------------------------
-//
 // EXPORT SCHEMA MODELS
 //
 //-----------------------------------------------------------------------------
