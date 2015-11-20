@@ -4,7 +4,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 var app = express();
 
 //set server defaults
@@ -19,7 +18,6 @@ db.on('error', console.error.bind(console, 'connection error.'));
 db.once('open', function(){
   console.log('opened')
 });
-
 
 require('./middleware.js')(app, express);
 
